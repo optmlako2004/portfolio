@@ -70,13 +70,15 @@ img {
 
 /* Pied de page */
 footer {
-    background-color: #1e3a8a;
-    color: white;
+    background-color: #1e3a8a; /* Couleur bleue */
+    color: white; /* Texte blanc */
     text-align: center;
-    padding: 10px;
-    position: fixed;
+    padding: 15px; /* Augmenter l'espace */
+    position: fixed; /* Toujours en bas */
     bottom: 0;
     width: 100%;
+    font-size: 14px; /* Taille de police adaptée */
+    box-shadow: 0 -2px 5px rgba(0, 0, 0, 0.2); /* Ombre subtile */
 }
 
 /* Section principale */
