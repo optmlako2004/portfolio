@@ -1,119 +1,335 @@
 <!DOCTYPE html>
 <html lang="fr">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Projets - Christian Ako</title>
     <script src="https://cdn.tailwindcss.com"></script>
-    <link rel="stylesheet" href="style1.css">
-    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
-</head>
-<body class="bg-gray-100 text-gray-900">
-    <header class="bg-blue-900 text-white p-5 flex justify-between items-center">
-        <h1 class="text-2xl font-bold"><a href="index.html" class="hover:text-gray-300">Christian Ako</a></h1>
-        <nav>
-            <ul class="flex space-x-4">
-                <li>
-                    <a href="index.html" class="hover:text-gray-300 flex items-center space-x-2">
-                        <i class="fas fa-home"></i>
-                        <span>Accueil</span>
-                    </a>
-                </li>
-                <li>
-                    <a href="diplomes.html" class="hover:text-gray-300 flex items-center space-x-2">
-                        <i class="fas fa-graduation-cap"></i>
-                        <span>Diplômes</span>
-                    </a>
-                </li>
-                <li>
-                    <a href="competences.html" class="hover:text-gray-300 flex items-center space-x-2">
-                        <i class="fas fa-tools"></i>
-                        <span>Compétences</span>
-                    </a>
-                </li>
-                <li>
-                    <a href="contact.html" class="hover:text-gray-300 flex items-center space-x-2">
-                        <i class="fas fa-envelope"></i>
-                        <span>Contact</span>
-                    </a>
-                </li>
-                <li>
-                    <a href="cv.html" class="hover:text-gray-300 flex items-center space-x-2">
-                        <i class="fas fa-address-card"></i>
-                        <span>CV</span>
-                    </a>
-                </li>
-            </ul>
-        </nav>
+    <link rel="stylesheet" href="style1.css" />
+    <link
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css"
+      rel="stylesheet"
+    />
+    <style>
+      /* Styles pour la fenêtre modale */
+      .modal {
+        display: none; /* Caché par défaut */
+        position: fixed;
+        z-index: 1000;
+        left: 0;
+        top: 0;
+        width: 100%;
+        height: 100%;
+        overflow: auto;
+        background-color: rgba(0, 0, 0, 0.8);
+        padding-top: 60px;
+      }
+      .modal-content {
+        margin: 5% auto;
+        padding: 20px;
+        width: 80%;
+        max-width: 900px;
+        background-color: #fff;
+        border-radius: 10px;
+        position: relative;
+      }
+      .close {
+        position: absolute;
+        top: 15px;
+        right: 25px;
+        color: #aaa;
+        font-size: 28px;
+        font-weight: bold;
+        cursor: pointer;
+      }
+      .gallery-grid {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+        gap: 1rem;
+      }
+    </style>
+  </head>
+  <body class="bg-gray-100 text-gray-900">
+    <header
+      class="bg-blue-900 text-white p-5 flex justify-between items-center"
+    >
+      <h1 class="text-2xl font-bold">
+        <a href="index.html" class="hover:text-gray-300">Christian Ako</a>
+      </h1>
+      <nav>
+        <ul class="flex space-x-4">
+          <li>
+            <a
+              href="index.html"
+              class="hover:text-gray-300 flex items-center space-x-2"
+              ><i class="fas fa-home"></i> <span>Accueil</span></a
+            >
+          </li>
+          <li>
+            <a
+              href="diplomes.html"
+              class="hover:text-gray-300 flex items-center space-x-2"
+              ><i class="fas fa-graduation-cap"></i> <span>Diplômes</span></a
+            >
+          </li>
+          <li>
+            <a
+              href="competences.html"
+              class="hover:text-gray-300 flex items-center space-x-2"
+              ><i class="fas fa-tools"></i> <span>Compétences</span></a
+            >
+          </li>
+          <li>
+            <a
+              href="contact.html"
+              class="hover:text-gray-300 flex items-center space-x-2"
+              ><i class="fas fa-envelope"></i> <span>Contact</span></a
+            >
+          </li>
+          <li>
+            <a
+              href="cv.html"
+              class="hover:text-gray-300 flex items-center space-x-2"
+              ><i class="fas fa-address-card"></i> <span>CV</span></a
+            >
+          </li>
+        </ul>
+      </nav>
     </header>
 
     <main class="p-10 text-left">
-        <h2 class="text-3xl font-bold mb-8 text-blue-900">Mes Réalisations</h2>
+      <h2 class="text-3xl font-bold mb-8 text-blue-900">Mes Réalisations</h2>
 
-        <div class="grid md:grid-cols-2 gap-6">
-            <!-- Projet 1 -->
-            <div class="bg-white p-6 rounded-xl shadow-lg hover:shadow-xl transition-transform transform hover:scale-105">
-                <h3 class="text-xl font-semibold mb-4 text-blue-800"><i class="fas fa-rocket text-purple-500 mr-2"></i> SAE - Science des Données</h3>
-                <p class="text-gray-700 mb-4">Projet d'analyse de données complexes avec visualisations interactives.</p>
-                <div class="flex flex-wrap gap-2">
-                    <span class="bg-gray-100 px-3 py-1 rounded-full text-sm">Python</span>
-                    <span class="bg-gray-100 px-3 py-1 rounded-full text-sm">Pandas</span>
-                    <span class="bg-gray-100 px-3 py-1 rounded-full text-sm">Matplotlib</span>
-                </div>
-            </div>
-
-            <!-- Projet 2 -->
-            <div class="bg-white p-6 rounded-xl shadow-lg hover:shadow-xl transition-transform transform hover:scale-105 relative">
-                <h3 class="text-xl font-semibold mb-4 text-green-800">
-                    <i class="fas fa-laptop-code text-green-500 mr-2"></i> SAE - INFO
-                </h3>
-                <span class="absolute top-4 right-4 bg-yellow-500 text-white text-xs font-bold px-2 py-1 rounded-full">En cours</span>
-                <p class="text-gray-700 mb-4">Développement d'une application de gestion d'informations avec une interface utilisateur ergonomique.</p>
-                <div class="flex flex-wrap gap-2">
-                    <span class="bg-gray-100 px-3 py-1 rounded-full text-sm">Java</span>
-                    <span class="bg-gray-100 px-3 py-1 rounded-full text-sm">MySQL</span>
-                    <span class="bg-gray-100 px-3 py-1 rounded-full text-sm">UML</span>
-                </div>
-            </div>
-
-            <!-- Projet 3 avec la page cachée -->
-            <div class="bg-white p-6 rounded-xl shadow-lg hover:shadow-xl transition-transform transform hover:scale-105">
-                <h3 class="text-xl font-semibold mb-4 text-orange-800"><i class="fas fa-globe text-orange-500 mr-2"></i> Portfolio Web</h3>
-                <p class="text-gray-700 mb-4">Développement full-stack de ce site portfolio avec des technologies modernes.</p>
-                <div class="flex flex-wrap gap-2 mb-4">
-                    <span class="bg-gray-100 px-3 py-1 rounded-full text-sm">HTML5</span>
-                    <span class="bg-gray-100 px-3 py-1 rounded-full text-sm">Tailwind CSS</span>
-                    <span class="bg-gray-100 px-3 py-1 rounded-full text-sm">JavaScript</span>
-                </div>
-                <button id="toggle-steps" class="bg-blue-600 text-white px-4 py-2 rounded hover:bg-blue-700 focus:ring-4 focus:ring-blue-300">
-                    Voir les étapes <i class="fas fa-chevron-down"></i>
-                </button>
-                <div id="steps-content" class="mt-4 bg-blue-50 rounded-lg p-4 text-gray-800 hidden">
-                    <h4 class="font-bold mb-2">Étapes de création du portfolio :</h4>
-                    <ul class="list-disc pl-5 space-y-1">
-                        <li>Définition de la structure du site (pages, navigation).</li>
-                        <li>Conception du design avec Tailwind CSS.</li>
-                        <li>Développement des pages HTML (Accueil, Projets, Diplômes, etc.).</li>
-                        <li>Ajout de l’interactivité avec JavaScript (menu, animations).</li>
-                        <li>Optimisation responsive pour mobiles et tablettes.</li>
-                        <li>Tests et corrections des bugs.</li>
-                        <li>Mise en ligne du site.</li>
-                    </ul>
-                </div>
-            </div>
+      <div class="grid md:grid-cols-2 gap-6">
+        <div
+          id="sae-data-project"
+          class="bg-white p-6 rounded-xl shadow-lg hover:shadow-xl transition-transform transform hover:scale-105 cursor-pointer"
+        >
+          <h3 class="text-xl font-semibold mb-4 text-blue-800">
+            <i class="fas fa-rocket text-purple-500 mr-2"></i> SAE - Science des
+            Données
+          </h3>
+          <p class="text-gray-700 mb-4">
+            Projet d'analyse de données complexes avec visualisations
+            interactives.
+          </p>
+          <span
+            class="absolute top-4 right-4 bg-green-500 text-white text-xs font-bold px-2 py-1 rounded-full"
+            >Terminé</span
+          >
+          <div class="flex flex-wrap gap-2">
+            <span class="bg-gray-100 px-3 py-1 rounded-full text-sm"
+              >Python</span
+            >
+            <span class="bg-gray-100 px-3 py-1 rounded-full text-sm"
+              >Pandas</span
+            >
+            <span class="bg-gray-100 px-3 py-1 rounded-full text-sm"
+              >Matplotlib</span
+            >
+          </div>
         </div>
+
+        <div
+          id="sae-info-project"
+          class="bg-white p-6 rounded-xl shadow-lg hover:shadow-xl transition-transform transform hover:scale-105 relative cursor-pointer"
+        >
+          <h3 class="text-xl font-semibold mb-4 text-green-800">
+            <i class="fas fa-laptop-code text-green-500 mr-2"></i> SAE - INFO
+          </h3>
+          <span
+            class="absolute top-4 right-4 bg-green-500 text-white text-xs font-bold px-2 py-1 rounded-full"
+            >Terminé</span
+          >
+          <p class="text-gray-700 mb-4">
+            Développement d'une application de gestion d'informations avec une
+            interface utilisateur ergonomique.
+          </p>
+          <div class="flex flex-wrap gap-2">
+            <span class="bg-gray-100 px-3 py-1 rounded-full text-sm">Java</span>
+            <span class="bg-gray-100 px-3 py-1 rounded-full text-sm"
+              >MySQL</span
+            >
+            <span class="bg-gray-100 px-3 py-1 rounded-full text-sm">UML</span>
+          </div>
+        </div>
+
+        <div
+          class="bg-white p-6 rounded-xl shadow-lg hover:shadow-xl transition-transform transform hover:scale-105"
+        >
+          <h3 class="text-xl font-semibold mb-4 text-orange-800">
+            <i class="fas fa-globe text-orange-500 mr-2"></i> Portfolio Web
+          </h3>
+          <p class="text-gray-700 mb-4">
+            Développement full-stack de ce site portfolio avec des technologies
+            modernes.
+          </p>
+          <div class="flex flex-wrap gap-2 mb-4">
+            <span class="bg-gray-100 px-3 py-1 rounded-full text-sm"
+              >HTML5</span
+            >
+            <span class="bg-gray-100 px-3 py-1 rounded-full text-sm"
+              >Tailwind CSS</span
+            >
+            <span class="bg-gray-100 px-3 py-1 rounded-full text-sm"
+              >JavaScript</span
+            >
+          </div>
+          <button
+            id="toggle-steps"
+            class="bg-blue-600 text-white px-4 py-2 rounded hover:bg-blue-700 focus:ring-4 focus:ring-blue-300"
+          >
+            Voir les étapes <i class="fas fa-chevron-down"></i>
+          </button>
+          <div
+            id="steps-content"
+            class="mt-4 bg-blue-50 rounded-lg p-4 text-gray-800 hidden"
+          >
+            <h4 class="font-bold mb-2">Étapes de création du portfolio :</h4>
+            <ul class="list-disc pl-5 space-y-1">
+              <li>Définition de la structure du site (pages, navigation).</li>
+              <li>Conception du design avec Tailwind CSS.</li>
+              <li>
+                Développement des pages HTML (Accueil, Projets, Diplômes, etc.).
+              </li>
+              <li>
+                Ajout de l’interactivité avec JavaScript (menu, animations).
+              </li>
+              <li>Optimisation responsive pour mobiles et tablettes.</li>
+              <li>Tests et corrections des bugs.</li>
+              <li>Mise en ligne du site.</li>
+            </ul>
+          </div>
+        </div>
+      </div>
     </main>
 
+    <div id="modal-data" class="modal">
+      <div class="modal-content">
+        <span class="close-btn-data">&times;</span>
+        <h3 class="text-2xl font-bold mb-4 text-blue-900">
+          Galerie: SAE - Science des Données
+        </h3>
+        <div class="gallery-grid">
+          <img
+            src="sae1.png"
+            alt="Image 1 du projet SAE"
+            class="rounded-lg w-full"
+          />
+          <img
+            src="sae12.png"
+            alt="Image 2 du projet SAE"
+            class="rounded-lg w-full"
+          />
+          <img
+            src="sae13.png"
+            alt="Image 3 du projet SAE"
+            class="rounded-lg w-full"
+          />
+          <img
+            src="sae14.png"
+            alt="Image 4 du projet SAE"
+            class="rounded-lg w-full"
+          />
+          <img
+            src="sae15.png"
+            alt="Image 5 du projet SAE"
+            class="rounded-lg w-full"
+          />
+        </div>
+      </div>
+    </div>
+
+    <div id="modal-info" class="modal">
+      <div class="modal-content">
+        <span class="close-btn-info">&times;</span>
+        <h3 class="text-2xl font-bold mb-4 text-green-800">
+          Galerie: SAE - INFO
+        </h3>
+        <div class="gallery-grid">
+          <img src="sae2.png" alt="Accueil Livreur" class="rounded-lg w-full" />
+          <img
+            src="sae21.png"
+            alt="Connexion Livreur"
+            class="rounded-lg w-full"
+          />
+          <img
+            src="sae22.png"
+            alt="Panier et menu utilisateur"
+            class="rounded-lg w-full"
+          />
+          <img src="sae23.png" alt="Conseils santé" class="rounded-lg w-full" />
+          <img
+            src="sae24.png"
+            alt="Liste conseils santé"
+            class="rounded-lg w-full"
+          />
+          <img
+            src="sae25.png"
+            alt="Page de consultation"
+            class="rounded-lg w-full"
+          />
+          <img
+            src="sae26.png"
+            alt="Page des produits"
+            class="rounded-lg w-full"
+          />
+          <img src="sae27.png" alt="Page d'accueil" class="rounded-lg w-full" />
+          <img
+            src="looping1.png"
+            alt="MCD(Modèle Conceptuel de Données)"
+            class="rounded-lg w-full"
+          />
+          <img
+            src="looping2.png"
+            alt="MCD(Modèle Conceptuel de Données)"
+            class="rounded-lg w-full"
+          />
+          <img
+            src="looping3.png"
+            alt="MCD(Modèle Conceptuel de Données)"
+            class="rounded-lg w-full"
+          />
+        </div>
+      </div>
+    </div>
+
     <footer class="bg-blue-900 text-white text-center p-4 mt-8">
-        <p>&copy; 2025 Christian Ako. Tous droits réservés.</p>
+      <p>&copy; 2025 Christian Ako. Tous droits réservés.</p>
     </footer>
 
     <script>
-        // Script pour afficher ou masquer la section cachée
-        document.getElementById('toggle-steps').addEventListener('click', function () {
-            const stepsContent = document.getElementById('steps-content');
-            stepsContent.classList.toggle('hidden');
+      // Script pour la section cachée du portfolio
+      document
+        .getElementById("toggle-steps")
+        .addEventListener("click", function () {
+          document.getElementById("steps-content").classList.toggle("hidden");
         });
+
+      // Fonction générique pour gérer les modales
+      function setupModal(triggerId, modalId, closeBtnClass) {
+        const modal = document.getElementById(modalId);
+        const trigger = document.getElementById(triggerId);
+        const closeBtn = document.querySelector("." + closeBtnClass);
+
+        trigger.addEventListener(
+          "click",
+          () => (modal.style.display = "block")
+        );
+        closeBtn.addEventListener(
+          "click",
+          () => (modal.style.display = "none")
+        );
+        window.addEventListener("click", (event) => {
+          if (event.target == modal) {
+            modal.style.display = "none";
+          }
+        });
+      }
+
+      // Initialisation des deux modales
+      setupModal("sae-data-project", "modal-data", "close-btn-data");
+      setupModal("sae-info-project", "modal-info", "close-btn-info");
     </script>
-</body>
+  </body>
 </html>
