@@ -5,56 +5,77 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Mon CV - Christian Ako</title>
     <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
     <link rel="stylesheet" href="style.css">
-    <style>
-        .cv-container {
-            width: 80%;
-            height: 90vh;
-            margin: auto;
-            margin-top: 80px;
-            border: 2px solid #ffffff;
-            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
-        }
-        .hidden { display: none; }
-    </style>
 </head>
-<script>
-    document.addEventListener('DOMContentLoaded', () => {
-        const menuToggle = document.getElementById('menu-toggle');
-        const nav = document.querySelector('nav');
-        if (menuToggle && nav) {
-            menuToggle.addEventListener('click', () => {
-                nav.classList.toggle('hidden');
-                nav.classList.toggle('flex');
-            });
-        }
-    });
-    </script>
-    
-<body class="bg-gray-100 text-white">
+<body class="bg-gray-100 text-gray-900 min-h-screen flex flex-col">
 
-    
-    <header class="bg-blue-900 bg-opacity-80 text-white p-5 flex justify-between items-center fixed w-full top-0">
-        <h1 class="text-xl font-bold cursor-pointer">
-            <a href="index.html">Christian Ako</a>
-        </h1>
-        <nav>
-            <ul class="flex space-x-4">
-                <li><a href="cv.html" class="hover:text-gray-300">CV</a></li>
+    <header class="bg-blue-900 text-white p-5 flex justify-between items-center">
+        <h1 class="text-xl font-bold"><a href="index.html" class="hover:text-gray-300">Christian Ako</a></h1>
+        <button id="menu-toggle" class="md:hidden text-2xl"><i class="fas fa-bars"></i></button>
+        <nav class="hidden md:flex">
+            <ul class="flex flex-col md:flex-row space-y-2 md:space-y-0 md:space-x-6">
+                <li><a href="index.html" class="hover:text-gray-300"><i class="fas fa-home"></i> Accueil</a></li>
+                <li><a href="diplomes.html" class="hover:text-gray-300"><i class="fas fa-graduation-cap"></i> Diplômes</a></li>
+                <li><a href="competences.html" class="hover:text-gray-300"><i class="fas fa-tools"></i> Compétences</a></li>
+                <li><a href="projets.html" class="hover:text-gray-300"><i class="fas fa-folder-open"></i> Projets</a></li>
+                <li><a href="contact.html" class="hover:text-gray-300"><i class="fas fa-envelope"></i> Contact</a></li>
             </ul>
         </nav>
     </header>
-    
-    <main class="flex flex-col items-center justify-center min-h-screen text-center px-5">
-        <h2 class="text-3xl font-bold mb-4">Mon CV</h2>
 
-        <iframe id="cvViewer" src="cv_Ako.pdf" class="cv-container"></iframe>
+    <main class="p-6 md:p-10 flex-1">
+        <h2 class="text-3xl font-bold mb-6 text-blue-900 text-center">Mon CV</h2>
+
+        <!-- Boutons d'action -->
+        <div class="flex flex-wrap justify-center gap-4">
+            <button onclick="downloadCV()" class="inline-flex items-center gap-2 bg-blue-600 text-white px-6 py-3 rounded-lg hover:bg-blue-700 transition font-medium shadow-lg cursor-pointer">
+                <i class="fas fa-download"></i>
+                Télécharger mon CV
+            </button>
+            <a href="cv_Ako.pdf" target="_blank" class="inline-flex items-center gap-2 bg-green-600 text-white px-6 py-3 rounded-lg hover:bg-green-700 transition font-medium shadow-lg">
+                <i class="fas fa-eye"></i>
+                Aperçu
+            </a>
+        </div>
     </main>
-    
+
     <footer class="bg-blue-900 text-white text-center p-4 mt-auto">
         <p>&copy; <span id="year"></span> Christian Ako. Tous droits réservés.</p>
     </footer>
-    <script>document.getElementById('year').textContent = new Date().getFullYear();</script>
 
+    <script>
+        document.getElementById('year').textContent = new Date().getFullYear();
+
+        document.addEventListener('DOMContentLoaded', () => {
+            const menuToggle = document.getElementById('menu-toggle');
+            const nav = document.querySelector('nav');
+            if (menuToggle && nav) {
+                menuToggle.addEventListener('click', () => {
+                    nav.classList.toggle('hidden');
+                    nav.classList.toggle('flex');
+                });
+            }
+        });
+
+        function downloadCV() {
+            fetch('cv_Ako.pdf')
+                .then(response => response.blob())
+                .then(blob => {
+                    const url = window.URL.createObjectURL(blob);
+                    const link = document.createElement('a');
+                    link.href = url;
+                    link.download = 'CV_Christian_Ako.pdf';
+                    document.body.appendChild(link);
+                    link.click();
+                    document.body.removeChild(link);
+                    window.URL.revokeObjectURL(url);
+                })
+                .catch(() => {
+                    // Fallback si fetch échoue
+                    window.open('cv_Ako.pdf', '_blank');
+                });
+        }
+    </script>
 </body>
 </html>
