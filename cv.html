@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mon CV - Christian Ako</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="style.css">
+    <style>
+        .cv-container {
+            width: 80%;
+            height: 90vh;
+            margin: auto;
+            margin-top: 80px;
+            border: 2px solid #ffffff;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+        }
+        .hidden { display: none; }
+    </style>
+</head>
+<script>
+    document.addEventListener('DOMContentLoaded', () => {
+        const menuToggle = document.getElementById('menu-toggle');
+        const nav = document.querySelector('nav');
+        if (menuToggle && nav) {
+            menuToggle.addEventListener('click', () => {
+                nav.classList.toggle('hidden');
+                nav.classList.toggle('flex');
+            });
+        }
+    });
+    </script>
+    
+<body class="bg-gray-100 text-white">
+
+    
+    <header class="bg-blue-900 bg-opacity-80 text-white p-5 flex justify-between items-center fixed w-full top-0">
+        <h1 class="text-xl font-bold cursor-pointer">
+            <a href="index.html">Christian Ako</a>
+        </h1>
+        <nav>
+            <ul class="flex space-x-4">
+                <li><a href="cv.html" class="hover:text-gray-300">CV</a></li>
+            </ul>
+        </nav>
+    </header>
+    
+    <main class="flex flex-col items-center justify-center min-h-screen text-center px-5">
+        <h2 class="text-3xl font-bold mb-4">Mon CV</h2>
+
+        <iframe id="cvViewer" src="cv_Ako.pdf" class="cv-container"></iframe>
+    </main>
+    
+    <footer class="bg-blue-900 text-white text-center p-4 mt-auto">
+        <p>&copy; <span id="year"></span> Christian Ako. Tous droits réservés.</p>
+    </footer>
+    <script>document.getElementById('year').textContent = new Date().getFullYear();</script>
+
+</body>
+</html>

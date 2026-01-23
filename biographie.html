@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Biographie - Christian Ako</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body class="bg-gray-100 text-gray-900 min-h-screen flex flex-col">
+    <header class="bg-blue-900 text-white p-5 flex justify-between items-center fixed w-full top-0 z-50">
+        <h1 class="text-xl font-bold"><a href="index.html" class="hover:text-gray-300">Christian Ako</a></h1>
+        <button id="menu-toggle" class="md:hidden text-2xl"><i class="fas fa-bars"></i></button>
+        <nav class="hidden md:flex">
+            <ul class="flex flex-col md:flex-row space-y-2 md:space-y-0 md:space-x-6">
+                <li><a href="index.html" class="hover:text-gray-300"><i class="fas fa-home"></i> Accueil</a></li>
+                <li><a href="diplomes.html" class="hover:text-gray-300"><i class="fas fa-graduation-cap"></i> Diplômes</a></li>
+                <li><a href="projets.html" class="hover:text-gray-300"><i class="fas fa-folder-open"></i> Projets</a></li>
+                <li><a href="competences.html" class="hover:text-gray-300"><i class="fas fa-book"></i> Compétences</a></li>
+                <li><a href="contact.html" class="hover:text-gray-300"><i class="fas fa-envelope"></i> Contact</a></li>
+                <li><a href="cv.html" class="hover:text-gray-300"><i class="fas fa-address-card"></i> CV</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <main class="pt-24 pb-16 px-4 md:px-10 text-left max-w-4xl mx-auto flex-1">
+        <h2 class="text-2xl md:text-3xl font-bold mb-8 text-blue-900">À propos de moi</h2>
+
+        <div class="bg-white p-6 md:p-8 rounded-xl shadow-lg">
+            <div class="flex flex-col md:flex-row items-center mb-8">
+                <div class="w-32 h-32 md:w-40 md:h-40 rounded-full overflow-hidden mr-0 md:mr-8 mb-4 md:mb-0">
+                    <img src="photoako.jpg" alt="Photo de Christian Ako" class="w-full h-full object-cover">
+                </div>
+                <div>
+                    <h3 class="text-xl font-semibold">Christian Ako</h3>
+                    <p class="text-gray-600">Étudiant en BUT3 Informatique - Parcours FA</p>
+                    <p class="text-blue-600 font-medium mt-1"><i class="fas fa-briefcase mr-1"></i> Développeur Web & Mobile chez Foodmoov</p>
+                    <p class="text-purple-600 text-sm font-medium mt-1"><i class="fas fa-search mr-1"></i> En recherche d'alternance</p>
+                </div>
+            </div>
+
+            <div class="space-y-6">
+                <p class="leading-relaxed">
+                    Passionné par l'innovation technologique, j'utilise mes compétences en programmation et en analyse de données pour résoudre efficacement des problèmes complexes et apporter des solutions innovantes.
+                </p>
+
+                <!-- Expérience professionnelle -->
+                <div class="bg-blue-50 p-4 rounded-lg border-l-4 border-blue-500">
+                    <h4 class="font-semibold mb-3 flex items-center gap-2">
+                        <i class="fas fa-briefcase text-blue-600"></i>
+                        Expérience Professionnelle
+                    </h4>
+                    <div class="flex items-start gap-3">
+                        <div class="bg-blue-600 text-white p-2 rounded-lg">
+                            <i class="fas fa-truck"></i>
+                        </div>
+                        <div>
+                            <p class="font-medium text-gray-800">Développeur Web & Mobile - Foodmoov</p>
+                            <p class="text-sm text-gray-600">Développement et maintenance d'applications web (Next.js, React) et mobiles (React Native) pour la plateforme de gestion de food trucks et restauration mobile.</p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Objectif professionnel -->
+                <div class="bg-purple-50 p-4 rounded-lg border-l-4 border-purple-500">
+                    <h4 class="font-semibold mb-2 flex items-center gap-2">
+                        <i class="fas fa-bullseye text-purple-600"></i>
+                        Objectif professionnel
+                    </h4>
+                    <p class="text-gray-700">
+                        Actuellement en BUT3 Informatique parcours FA à l'Université Sorbonne Paris Nord, je recherche une alternance pour continuer à développer mes compétences en entreprise. Mon objectif est de poursuivre vers un Master ou une école d'ingénieur en informatique.
+                    </p>
+                </div>
+
+                <!-- Centres d'intérêt -->
+                <div class="bg-gray-50 p-4 rounded-lg">
+                    <h4 class="font-semibold mb-2 flex items-center gap-2">
+                        <i class="fas fa-heart text-red-500"></i>
+                        Centres d'intérêt
+                    </h4>
+                    <div class="flex flex-wrap gap-3">
+                        <span class="bg-white px-3 py-1 rounded-full text-sm shadow-sm">
+                            <i class="fas fa-basketball-ball text-orange-500 mr-1"></i> Basketball
+                        </span>
+                        <span class="bg-white px-3 py-1 rounded-full text-sm shadow-sm">
+                            <i class="fas fa-swimmer text-blue-500 mr-1"></i> Natation
+                        </span>
+                        <span class="bg-white px-3 py-1 rounded-full text-sm shadow-sm">
+                            <i class="fas fa-robot text-purple-500 mr-1"></i> Intelligence artificielle
+                        </span>
+                        <span class="bg-white px-3 py-1 rounded-full text-sm shadow-sm">
+                            <i class="fas fa-code text-green-500 mr-1"></i> Nouvelles technologies
+                        </span>
+                    </div>
+                </div>
+
+                <!-- Réseaux -->
+                <div class="flex flex-wrap gap-3 pt-4">
+                    <a href="https://www.linkedin.com/in/christian-ako-66256233a/" target="_blank" class="flex items-center gap-2 bg-blue-600 text-white px-4 py-2 rounded-lg hover:bg-blue-700 transition">
+                        <i class="fab fa-linkedin"></i>
+                        <span>LinkedIn</span>
+                    </a>
+                    <a href="https://github.com/optmlako2004" target="_blank" class="flex items-center gap-2 bg-gray-800 text-white px-4 py-2 rounded-lg hover:bg-gray-900 transition">
+                        <i class="fab fa-github"></i>
+                        <span>GitHub</span>
+                    </a>
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <footer class="bg-blue-900 text-white text-center p-4 mt-auto">
+        <p>&copy; <span id="year"></span> Christian Ako. Tous droits réservés.</p>
+    </footer>
+
+    <script>
+        document.getElementById('year').textContent = new Date().getFullYear();
+
+        document.addEventListener('DOMContentLoaded', () => {
+            const menuToggle = document.getElementById('menu-toggle');
+            const nav = document.querySelector('nav');
+
+            if (menuToggle && nav) {
+                menuToggle.addEventListener('click', () => {
+                    nav.classList.toggle('hidden');
+                    nav.classList.toggle('flex');
+                });
+            }
+        });
+    </script>
+</body>
+</html>

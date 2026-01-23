@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Diplômes - Christian Ako</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body class="bg-gray-100 text-gray-900">
+    <header class="bg-blue-900 text-white p-5 flex justify-between items-center fixed w-full top-0 z-50">
+        <h1 class="text-xl font-bold"><a href="index.html" class="hover:text-gray-300">Christian Ako</a></h1>
+        <button id="menu-toggle" class="md:hidden"><i class="fas fa-bars"></i></button>
+        <nav class="hidden md:flex">
+            <ul class="flex flex-col md:flex-row space-y-2 md:space-y-0 md:space-x-6">
+                <li><a href="index.html" class="hover:text-gray-300"><i class="fas fa-home"></i> Accueil</a></li>
+                <li><a href="projets.html" class="hover:text-gray-300"><i class="fas fa-folder-open"></i> Projets</a></li>
+                <li><a href="competences.html" class="hover:text-gray-300"><i class="fas fa-book"></i> Compétences</a></li>
+                <li><a href="contact.html" class="hover:text-gray-300"><i class="fas fa-envelope"></i> Contact</a></li>
+                <li><a href="cv.html" class="hover:text-gray-300"><i class="fas fa-address-card"></i> CV</a></li>
+            </ul>
+        </nav>
+    </header>
+    <main class="pt-24 pb-16 px-4 md:px-10 text-left max-w-4xl mx-auto">
+        <h2 class="text-2xl md:text-3xl font-bold mb-8 text-blue-900">Parcours Académique</h2>
+        
+        <div class="space-y-6">
+            <div class="bg-white p-6 rounded-xl shadow-lg transition-shadow hover:shadow-xl">
+                <h3 class="text-xl font-semibold flex items-center flex-wrap gap-2">
+                    <span class="bg-blue-100 p-2 rounded-full mr-3">🎓</span>
+                    BUT3 Informatique - Parcours FA
+                    <span class="bg-yellow-500 text-white text-xs font-bold px-2 py-1 rounded-full">En cours</span>
+                    <span class="bg-purple-500 text-white text-xs font-bold px-2 py-1 rounded-full">Alternance</span>
+                </h3>
+                <p class="text-gray-600 mt-2">Université Sorbonne Paris Nord (Villetaneuse) | 2025-2026</p>
+                <p class="text-gray-500 text-sm mt-1">Formation en alternance - Recherche d'entreprise</p>
+            </div>
+
+            <div class="bg-white p-6 rounded-xl shadow-lg transition-shadow hover:shadow-xl">
+                <h3 class="text-xl font-semibold flex items-center flex-wrap gap-2">
+                    <span class="bg-green-100 p-2 rounded-full mr-3">✅</span>
+                    BUT2 Informatique - Passerelle
+                    <span class="bg-green-500 text-white text-xs font-bold px-2 py-1 rounded-full">Validé</span>
+                </h3>
+                <p class="text-gray-600 mt-2">Université Sorbonne Paris Nord (Villetaneuse) | 2024-2025</p>
+                <p class="text-gray-500 text-sm mt-1">Admission en passerelle après BTS</p>
+            </div>
+
+            <div class="bg-white p-6 rounded-xl shadow-lg transition-shadow hover:shadow-xl">
+                <a href="attestion bts.pdf" target="_blank" rel="noopener noreferrer">
+                    <h3 class="text-xl font-semibold flex items-center flex-wrap gap-2">
+                        <span class="bg-green-100 p-2 rounded-full mr-3">📜</span>
+                        BTS SIO (Services Informatiques aux Organisations)
+                        <span class="bg-blue-500 text-white text-xs font-bold px-2 py-1 rounded-full">Attestation</span>
+                    </h3>
+                </a>
+                <p class="text-gray-600 mt-2">2022-2024</p>
+            </div>
+        </div>
+    </main>
+
+    <footer class="bg-blue-900 text-white text-center p-4 mt-auto">
+        <p>&copy; <span id="year"></span> Christian Ako. Tous droits réservés.</p>
+    </footer>
+    <script>document.getElementById('year').textContent = new Date().getFullYear();</script>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            const menuToggle = document.getElementById('menu-toggle');
+            const nav = document.querySelector('nav');
+
+            if (menuToggle && nav) {
+                menuToggle.addEventListener('click', () => {
+                    nav.classList.toggle('hidden');
+                    nav.classList.toggle('flex');
+                });
+            }
+        });
+    </script>
+</body>
+</html>

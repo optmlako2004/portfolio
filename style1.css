@@ -1,0 +1,37 @@
+/* style1.css */
+
+/* Sticky footer support */
+html {
+    height: 100%;
+}
+
+body {
+    min-height: 100%;
+    display: flex;
+    flex-direction: column;
+}
+
+main {
+    flex: 1;
+}
+
+footer {
+    margin-top: auto;
+}
+
+input, textarea {
+    min-width: 0; /* Empêche le débordement sur mobile */
+}
+
+/* Améliore le rendu des champs sur mobile */
+@media (max-width: 640px) {
+    input, textarea, button {
+        font-size: 16px; /* Evite le zoom automatique sur iOS */
+    }
+    
+    .flex.items-center.space-x-4 {
+        flex-direction: column;
+        text-align: center;
+        gap: 0.5rem;
+    }
+}

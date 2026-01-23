@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Christian Ako - Portfolio</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body class="bg-gray-100 text-gray-900">
+
+    <!-- Vidéo de fond -->
+    <div class="video-background">
+        <video autoplay muted loop playsinline class="video">
+            <source src="Top Shot America Drone Cityscape_By_M-ART_Production_Artlist_HD.mp4" type="video/mp4">
+            Votre navigateur ne supporte pas les vidéos HTML5.
+        </video>
+        <div class="overlay"></div>
+    </div>
+
+    <!-- Contenu principal -->
+    <header class="bg-blue-900 text-white p-5 flex justify-between items-center fixed w-full top-0 z-50">
+        <h1 class="text-xl font-bold"><a href="index.html" class="hover:text-gray-300">Christian Ako</a></h1>
+        <button id="menu-toggle" class="md:hidden text-2xl focus:outline-none">
+            <i class="fas fa-bars"></i>
+        </button>
+        <nav id="main-nav" class="hidden flex-col absolute top-full left-0 w-full bg-blue-900 md:static md:flex md:flex-row md:w-auto md:bg-transparent">
+            <ul class="flex flex-col md:flex-row md:space-x-6">
+                <li><a href="index.html" class="hover:text-gray-300 py-2 px-4 block"><i class="fas fa-home"></i> Accueil</a></li>
+                <li><a href="biographie.html" class="hover:text-gray-300 py-2 px-4 block"><i class="fas fa-user"></i> Biographie</a></li>
+                <li><a href="diplomes.html" class="hover:text-gray-300 py-2 px-4 block"><i class="fas fa-graduation-cap"></i> Diplômes</a></li>
+                <li><a href="competences.html" class="hover:text-gray-300 py-2 px-4 block"><i class="fas fa-book"></i> Compétences</a></li>
+                <li><a href="projets.html" class="hover:text-gray-300 py-2 px-4 block"><i class="fas fa-folder-open"></i> Projets</a></li>
+                <li><a href="contact.html" class="hover:text-gray-300 py-2 px-4 block"><i class="fas fa-envelope"></i> Contact</a></li>
+                <li><a href="cv.html" class="hover:text-gray-300 py-2 px-4 block"><i class="fas fa-address-card"></i> CV</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <main class="pt-32 pb-16 flex flex-col items-center justify-center min-h-screen text-center px-4">
+        <h2 class="text-3xl md:text-5xl font-bold mb-6 text-white">Christian Ako</h2>
+        <p class="text-xl md:text-2xl mb-2 text-gray-200">Étudiant en BUT3 Informatique - Parcours FA</p>
+        <p class="text-base md:text-lg mb-2 text-gray-300">Université Sorbonne Paris Nord (Villetaneuse)</p>
+        <p class="text-base md:text-lg mb-4 text-blue-300 font-medium">
+            <i class="fas fa-briefcase mr-2"></i>Développeur Web & Mobile chez Foodmoov
+        </p>
+        <p class="text-base md:text-lg mb-6 text-gray-300">Passionné par la programmation, l'IA et la création de solutions innovantes.</p>
+        <div class="mb-6 bg-purple-600 bg-opacity-80 px-4 py-2 rounded-full">
+            <p class="text-white font-semibold">🔍 À la recherche d'une alternance</p>
+        </div>
+        <img src="photoako.jpg" alt="Christian Ako" class="w-32 h-32 md:w-48 md:h-48 rounded-full border-4 border-white shadow-lg animate-[floating_3s_ease-in-out_infinite] mx-auto mb-4">
+        <div class="flex gap-4 flex-wrap justify-center">
+            <a href="contact.html" class="bg-blue-900 text-white px-6 py-3 rounded-full shadow-md hover:bg-blue-700 transition">Me Contacter</a>
+            <a href="vision-ia.html" class="bg-purple-600 text-white px-6 py-3 rounded-full shadow-md hover:bg-purple-500 transition">
+                <i class="fas fa-robot mr-2"></i>Ma Vision de l'IA
+            </a>
+            <a href="https://www.linkedin.com/in/christian-ako-66256233a/" target="_blank" class="bg-blue-600 text-white px-6 py-3 rounded-full shadow-md hover:bg-blue-500 transition">
+                <i class="fab fa-linkedin mr-2"></i>LinkedIn
+            </a>
+        </div>
+    </main>
+
+    <footer class="bg-blue-900 text-white text-center p-4 mt-auto">
+        <p>&copy; <span id="year"></span> Christian Ako. Tous droits réservés.</p>
+    </footer>
+    <script>document.getElementById('year').textContent = new Date().getFullYear();</script>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            const menuToggle = document.getElementById('menu-toggle');
+            const nav = document.getElementById('main-nav');
+            if (menuToggle && nav) {
+                menuToggle.addEventListener('click', function() {
+                    nav.classList.toggle('hidden');
+                });
+            }
+        });
+    </script>
+
+</body>
+</html>
