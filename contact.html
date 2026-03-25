@@ -70,11 +70,17 @@
                 <h3 class="text-lg font-semibold mb-4 text-gray-700">
                     <i class="fas fa-paper-plane text-blue-600 mr-2"></i>M'envoyer un message
                 </h3>
-                <form action="https://formsubmit.co/christianangelaelako@gmail.com" method="POST" class="space-y-4">
-                    <!-- Anti-spam -->
-                    <input type="hidden" name="_captcha" value="false">
-                    <input type="hidden" name="_subject" value="Nouveau message depuis ton portfolio">
-                    <input type="hidden" name="_next" value="https://optmlako2004.github.io/site-ako/contact.html">
+                <!-- Message de succès -->
+                <div id="success-msg" class="hidden bg-green-50 border-l-4 border-green-500 p-4 rounded-r-lg mb-4">
+                    <p class="text-green-800 font-medium"><i class="fas fa-check-circle mr-2"></i>Message envoyé avec succes !</p>
+                </div>
+
+                <!-- Message d'erreur -->
+                <div id="error-msg" class="hidden bg-red-50 border-l-4 border-red-500 p-4 rounded-r-lg mb-4">
+                    <p class="text-red-800 font-medium"><i class="fas fa-times-circle mr-2"></i>Erreur lors de l'envoi. Veuillez reessayer.</p>
+                </div>
+
+                <form id="contact-form" class="space-y-4">
                     <input type="text" name="_honey" style="display:none">
 
                     <div class="grid md:grid-cols-2 gap-4">
@@ -102,7 +108,7 @@
                             class="w-full px-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-blue-500 outline-none transition resize-y"></textarea>
                     </div>
 
-                    <button type="submit"
+                    <button type="submit" id="submit-btn"
                         class="inline-flex items-center gap-2 bg-blue-600 text-white px-6 py-3 rounded-lg hover:bg-blue-700 transition font-medium">
                         <i class="fas fa-paper-plane"></i> Envoyer
                     </button>
@@ -145,6 +151,44 @@
                     nav.classList.toggle('flex');
                 });
             }
+
+            const form = document.getElementById('contact-form');
+            const successMsg = document.getElementById('success-msg');
+            const errorMsg = document.getElementById('error-msg');
+            const submitBtn = document.getElementById('submit-btn');
+
+            form.addEventListener('submit', function(e) {
+                e.preventDefault();
+                successMsg.classList.add('hidden');
+                errorMsg.classList.add('hidden');
+                submitBtn.disabled = true;
+                submitBtn.innerHTML = '<i class="fas fa-spinner fa-spin"></i> Envoi en cours...';
+
+                const formData = new FormData(form);
+                formData.append('_captcha', 'false');
+                formData.append('_subject', 'Nouveau message depuis ton portfolio');
+
+                fetch('https://formsubmit.co/ajax/christianangelaelako@gmail.com', {
+                    method: 'POST',
+                    body: formData
+                })
+                .then(function(response) { return response.json(); })
+                .then(function(data) {
+                    if (data.success) {
+                        successMsg.classList.remove('hidden');
+                        form.reset();
+                    } else {
+                        errorMsg.classList.remove('hidden');
+                    }
+                })
+                .catch(function() {
+                    errorMsg.classList.remove('hidden');
+                })
+                .finally(function() {
+                    submitBtn.disabled = false;
+                    submitBtn.innerHTML = '<i class="fas fa-paper-plane"></i> Envoyer';
+                });
+            });
         });
     </script>
 </body>
